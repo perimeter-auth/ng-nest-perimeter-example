@@ -31,7 +31,16 @@ export const authCodeFlowConfig: AuthConfig = {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, OAuthModule.forRoot()],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    OAuthModule.forRoot({
+      resourceServer: {
+        allowedUrls: ['http://localhost:3333/api/'],
+        sendAccessToken: true,
+      },
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

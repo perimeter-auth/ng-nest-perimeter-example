@@ -1,3 +1,8 @@
-<!--<div>Message: {{ hello$ | async | json }}</div>-->
+<ng-container *ngIf="view$ | async as view">
+  <div>read: {{ view.r | json }}</div>
+  <div>read1: {{ view.r1 | json }}</div>
+  <div>read2: {{ view.r2 | json }}</div>
+</ng-container>
 <button (click)="onAuthorize()">Authorize</button>
 <button (click)="onLogout()">Logout</button>
+<button (click)="onReload()">Reload Data</button>
