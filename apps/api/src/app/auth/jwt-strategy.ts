@@ -14,21 +14,18 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 5,        
-        jwksUri: `${environment.issuer}/.well-known/jwks.json`,
-        requestAgentOptions: {
-            
-        }        
+        jwksUri: `${environment.issuer}/.well-known/jwks.json`
       }),
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       //audience: environment.audience,
       //issuer: environment.issuer,
-      algorithms: ['RS256']
+      algorithms: ['RS256'],
+      
     });
-    console.log('111', JwtStrategy);
   }
 
-  validate(payload: unknown): unknown {
-    console.log('!!!', payload);
+  async validate(payload: unknown) {
+    console.log('---', payload);
     return payload;
   }
 
