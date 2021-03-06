@@ -4,8 +4,6 @@ import { Message } from '@ng-nest-perimeter-example/api-interfaces';
 import { AppService } from './app.service';
 import { Scopes, ScopesGuard } from './auth/scopes.guard';
 
-// https://auth0.com/blog/developing-a-secure-api-with-nestjs-adding-authorization/
-
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}

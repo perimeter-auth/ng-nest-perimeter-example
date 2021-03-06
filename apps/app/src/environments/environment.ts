@@ -4,6 +4,11 @@
 
 export const environment = {
   production: false,
+  auth: {
+    issuer: 'https://prr.pw/api/auth/issuers/main01/default/dev',
+    clientId: 'Revjx3OEXy3IOWKbtKAHi3jW04oGY279Oy',
+    scope: 'openid profile email offline_access read:1 read:2',    
+  }
 };
 
 /*
